@@ -1,0 +1,11 @@
+.top_bar 
+  a(href='/home' class=(page === "home" ? "active" : undefined)) Home
+  a(href='/play' class=(page === "play" ? "active" : undefined)) Play
+  a(href='/users' class=(page === "search" ? "active" : undefined)) Search
+  if session.loggedIn
+    a(href='/inbox' style='float: right;' class=(page === "inbox" ? "active" : undefined))
+      img(src='/Icons/inbox_icon.svg' height="19" alt="Inbox")
+    a(href=('/users/' + session.username) style='float: right;' class=(page === "myProfile" ? "active" : undefined))= session.username
+  else 
+    a(href='/signup' style='float: right;' class=(page === "signup" ? "active" : undefined)) Sign Up
+    a(href='/login' style='float: right;' class=(page === "login" ? "active" : undefined)) Log In

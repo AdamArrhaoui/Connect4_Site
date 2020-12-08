@@ -1,0 +1,46 @@
+
+.login_box {
+    background-color: rgb(248, 248, 248);
+    max-width: 480px;
+    margin: auto;
+    margin-bottom: 35px;
+    padding: 15px 30px;
+    border-radius: 4px;
+    align-content: center;
+}
+
+.login_box h1 {
+    font-size: large;
+    text-align: center;
+    margin: auto;
+}   
+
+.login_box label {
+    
+    margin: auto;
+    font-size: small;
+    color: dimgray;
+}
+
+.login_box input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.login_box button{
+    display: flex;
+    justify-content: center;
+    background-color: #0096C7;
+    color: white;
+    padding: 10px;
+    margin: 15px auto 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.login_box button:hover{
+    background-color: #48CAE4;
+}

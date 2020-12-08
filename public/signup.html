@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Connect 4</title>
+    <link rel="stylesheet" href="basestyle.css">
+    <link rel="stylesheet" href="loginbox.css">
+    <script src="Scripts/signUp.js"></script>
+</head>
+
+<body>
+	<div class="top_bar">
+		<a href="index.html">Home</a>
+		<a class="active" href="signup.html">Sign Up</a>
+        <a href="login.html">Log In</a>
+        <a href="play.html">Play</a>
+        <a href="howtoplay.html">How To Play</a>
+        <a href="account.html" style="float: right;">Account</a>
+	</div>
+
+	<div class="content">
+        <h1 style="text-align: center;">Create your account:</h1>
+        
+		<form class="login_box" action="/users" method="POST" onsubmit="return onSubmit()">
+            <h1>Sign up:</h1>
+
+            <label for="username">Username: </label><br>
+            <input type="text" name="username" id="username" placeholder="Letters, numbers, and underscores only" minlength="5" maxlength="22" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" placeholder="Letters, numbers, and underscores only" minlength="5" maxlength="22" required><br>
+
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="password" name="confirm_password" id="confirm_password" minlength="5" maxlength="22" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email" placeholder=(Optional)>
+
+            <button type="submit" id="submit">Sign up</button>
+        </form>
+        <div style="text-align: center;">Already have an account? <a href="login.html">Log in!</a></div>
+	</div>
+</body>
+</html>

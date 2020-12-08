@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Connect 4
+  link(rel='stylesheet' href='basestyle.css')
+  link(rel='stylesheet' href='game.css')
+include ./partials/navbar.pug
+.content
+  .game
+    .player_bar
+      img.pfp(src='Assets/default_pfp.svg')
+      |  Opponent
+    img.game_board(src='Assets/placeholder_board.png')
+    .player_bar
+      img.pfp(src='Assets/default_pfp.svg')
+      |  You
+  .chat
+    img(src='Assets/chat.png' width='320px')
+  p
+    | This is the worst looking part of the site so far. I couldn&apos;t figure out
+    | how to line up the game and the chat :(
+  p
+    | I&apos;ll fix it in the final website

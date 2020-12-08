@@ -1,0 +1,17 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Connect 4
+  link(rel='stylesheet' href='/basestyle.css')
+include ./partials/navbar.pug
+
+.content   
+    h1=user.name + "'s Friends:"
+
+    if user.friends.length > 0
+        each friend in user.friends
+            a(href="/users/" + friend.name)=friend.name
+            br
+    else
+        h2 User doesn't have any friends!
+    a(href="/users/" + user.name)="back to " + user.name +"'s profile"
