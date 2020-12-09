@@ -79,7 +79,7 @@ function sendPlayPage(req, res, next){
 
 function sendInboxPage(req, res, next){
     if (!req.session.loggedIn){
-        sendLoginPage(req, res, next);
+        res.redirect("/login");
         return;
     }
     User.findById(req.session.userId, function(err, user){
