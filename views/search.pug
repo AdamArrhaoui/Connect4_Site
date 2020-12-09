@@ -18,7 +18,7 @@ include ./partials/navbar.pug
       button(type="submit")
       
     if userList 
-      if userList.length > 1
+      if userList.length > 0
         each user in userList
           a(href="/users/" + user.name)=user.name
           br
