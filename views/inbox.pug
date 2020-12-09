@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Connect 4
+  link(rel='stylesheet' href='/basestyle.css')
+include ./partials/navbar.pug
+
+.content   
+    h1 Your friend requests
+
+    if user.friendRequests.incoming.length > 0
+        table
+        each request in user.friendRequests.incoming
+            tr
+                th= request.name
+                td
+                    a(href="/users/" + request.name) Profile
+    else
+        h2 You don't have any friend requests!
+    a(href="/users/" + user.name)="back to " + user.name +"'s profile"

@@ -76,6 +76,29 @@ function sendPlayPage(req, res, next){
     res.render("play", {page: "play", session: req.session});
 }
 
+function sendInboxPage(req, res, next){
+    if (!req.session.loggedIn){
+        sendLoginPage(req, res, next);
+        return;
+    }
+    User.findById(req.session.userId, function(err, user){
+        if (err){
+            console.log(err);
+            res.status(500).send("can't load logged in user");
+            return;
+        }
+
+        User.populate(user, {path: 'friendRequests.incoming', select: "-password"}, function(err, userWFriends){
+            if (err){
+                console.log(err);
+                res.status(500).send("can't load friend requests");
+                return;
+            }
+
+            res.render("inbox", {page: "inbox", user: userWFriends, session: req.session});
+        })
+    });
+}
 
 function postLogin(req, res, next){
     if(req.session.loggedIn){
@@ -128,6 +151,7 @@ function postLogout(req, res, next){
         sendHomePage(req, res, next);
     }
 }
+
 
 function logger(req, res, next){
     console.log("\n");
