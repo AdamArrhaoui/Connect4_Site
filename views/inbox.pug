@@ -17,4 +17,5 @@ include ./partials/navbar.pug
                     a(href="/users/" + request.name) Profile
     else
         h2 You don't have any friend requests!
-    a(href="/users/" + user.name)="back to " + user.name +"'s profile"
+    br
+    a(href="/users/" + user.name)="back to your profile"
