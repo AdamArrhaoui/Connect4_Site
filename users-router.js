@@ -137,7 +137,7 @@ function sendFriendRequest(req, res, next){
             console.log(receivingUser.name + " has been updated!");
         });
 
-        res.status(200).send("friend request sent");
+        res.redirect("/inbox");
     });
 }
 
