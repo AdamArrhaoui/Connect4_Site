@@ -40,7 +40,8 @@ app.route('/search')
 app.route('/play')
     .get(sendPlayPage);
 
-
+app.route('/inbox')
+    .get(sendInboxPage);
 
 
 app.route('/').get(sendHomePage);
