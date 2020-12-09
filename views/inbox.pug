@@ -12,9 +12,10 @@ include ./partials/navbar.pug
         table
         each request in user.friendRequests.incoming
             tr
-                th= request.name
-                td 
-                    a(href="/users/" + request.name)= "Profile"
+                th= a(href="/users/" + request.name)=request.name
+                td
+                    form
+                        button(type='menu' formaction=`/users/${request.id}/friends` formmethod="post") Accept
     else
         h2 You don't have any friend requests!
     br
