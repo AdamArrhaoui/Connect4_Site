@@ -142,24 +142,24 @@ function sendFriendRequest(req, res, next){
 }
 
 
-function loadUserById(req, res, next, id){
+function loadUserById(req, res, next, userId){
     let objId;
     try{
-        objId = new ObjectId(id);
+        objId = new ObjectId(userId);
     } catch(err){
-        res.status(404).send("User ID " + id + " is invalid!");
+        res.status(404).send("User ID " + userId + " is invalid!");
         return;
     }
 
-    User.findById(id, function(err, result){
+    User.findById(userId, function(err, result){
         if(err){
             console.log(err);
-            res.status(500).send("Failed to load user with id: " + id);
+            res.status(500).send("Failed to load user with id: " + userId);
             return;
         }
         
         if(!result){
-            res.status(404).send("User with id: " + id + " does not exist!");
+            res.status(404).send("User with id: " + userId + " does not exist!");
             return;
         }
 
