@@ -10,6 +10,7 @@ router.post("/", express.json(), express.urlencoded(), createUser);
 router.get("/", parseQuery, loadUsersList, respondMultipleUsers);
 
 router.get("/:userId([a-fA-F0-9]{24})", respondSingleUser);
+router.post("/:userId([a-fA-F0-9]{24}/friends)", sendFriendRequest);
 router.param("userId", loadUserById);
 
 router.get("/:username(\\w+)", respondSingleUser);
