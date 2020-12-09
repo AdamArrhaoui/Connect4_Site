@@ -12,7 +12,8 @@ include ./partials/navbar.pug
         table
         each request in user.friendRequests.incoming
             tr
-                th= a(href="/users/" + request.name)=request.name
+                th 
+                    a(href="/users/" + request.name)=request.name
                 td
                     form
                         button(type='menu' formaction=`/users/${request.id}/friends` formmethod="post") Accept
