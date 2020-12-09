@@ -13,8 +13,7 @@ include ./partials/navbar.pug
         each request in user.friendRequests.incoming
             tr
                 th= request.name
-                td
-                    a(href="/users/" + request.name) Profile
+                td a(href="/users/" + request.name) Profile
     else
         h2 You don't have any friend requests!
     br
